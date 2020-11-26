@@ -43,6 +43,24 @@ Usage
 ## request parameter sample 
 ```javascript
 msg.action = 'getAccounts';
+msg.action = 'createProcessorToken';
+msg.action = 'invalidateAccessToken';
+msg.action = 'removeItem';
+msg.action = 'getItem';
+msg.action = 'getBalance';
+msg.action = 'getAuth';
+msg.action = 'getIdentity';
+msg.action = 'getIncome';
+msg.action = 'getCreditDetails';
+msg.action = 'getLiabilities';
+msg.action = 'getDepositSwitch';
+msg.action = 'getHoldings';
+msg.action = 'getInvestmentTransactions';
+msg.action = 'getTransactions';
+msg.action = 'getAllTransactions';
+msg.action = 'refreshTransactions';
+msg.action = 'createStripeToken';
+msg.action = 'resetLogin';
 ```
 
 ## sample flow
