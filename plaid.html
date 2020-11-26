@@ -1,0 +1,34 @@
+
+<script type="text/x-red" data-template-name="plaid">
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa"></i> action </label>
+        <input type="text" id="node-input-action" placeholder="action">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="plaid">
+   <p>Request <b>msg.payload (action)</b> </p>
+   <p>Simple way to get to plaid API.</p>
+   <p><a href="https://www.npmjs.com/package/plaid" target="_new">ref this</a></p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('plaid',{
+        category: 'function',
+        defaults: {
+            action: {value:"", required:false}
+        },
+        color:"#ffffff",
+        icon: "plaid.png",
+        align: "left",
+        inputs:1,
+        outputs:1,
+        label: function() {
+            return this.name||"plaid";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+
+</script>

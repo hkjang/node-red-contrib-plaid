@@ -1,0 +1,119 @@
+[
+  {
+    "id": "528cc235.f3804c",
+    "type": "inject",
+    "z": "2d59a971.3a1ae6",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 60,
+    "wires": [
+      [
+        "8128cffa.82124"
+      ]
+    ]
+  },
+  {
+    "id": "a7bab3cd.795af",
+    "type": "plaid",
+    "z": "2d59a971.3a1ae6",
+    "action": "getAccounts",
+    "x": 630,
+    "y": 60,
+    "wires": [
+      [
+        "d6acfc72.6daab"
+      ]
+    ]
+  },
+  {
+    "id": "6ea66fb7.b863e",
+    "type": "debug",
+    "z": "2d59a971.3a1ae6",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 950,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "8128cffa.82124",
+    "type": "function",
+    "z": "2d59a971.3a1ae6",
+    "name": "",
+    "func": "msg.action = 'getAccounts';\n  \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 280,
+    "y": 60,
+    "wires": [
+      [
+        "c6b7f33b.ab8ef"
+      ]
+    ]
+  },
+  {
+    "id": "d6acfc72.6daab",
+    "type": "function",
+    "z": "2d59a971.3a1ae6",
+    "name": "",
+    "func": "\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 780,
+    "y": 60,
+    "wires": [
+      [
+        "6ea66fb7.b863e"
+      ]
+    ]
+  },
+  {
+    "id": "c6b7f33b.ab8ef",
+    "type": "delay",
+    "z": "2d59a971.3a1ae6",
+    "name": "",
+    "pauseType": "rate",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "30",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 460,
+    "y": 60,
+    "wires": [
+      [
+        "a7bab3cd.795af"
+      ]
+    ]
+  }
+]
